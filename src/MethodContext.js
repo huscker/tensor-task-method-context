@@ -12,7 +12,7 @@ export const obj = {
     a(){
     	this.count++;
     },
-    subscribe() {this.a = this.a.bind(this);EventEmitter.on('click',this.a},
+    subscribe() {this.a = this.a.bind(this);EventEmitter.on('click',this.a);},
     unsubscribe() {EventEmitter.off('click',this.a},
 };
 
