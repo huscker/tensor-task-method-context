@@ -6,10 +6,14 @@ import { EventEmitter } from './EventEmitter';
 2)В методе unsubscribe отпишитесь от события click с помощью EventEmitter.off(eventName, callback).
 В качестве callback нужно передавать тот же самый обработчик, который был передан при подписке.
  */
+ 
 export const obj = {
     count: 0,
-    subscribe() {},
-    unsubscribe() {},
+    a(){
+    	this.count++;
+    },
+    subscribe() {this.a = this.a.bind(this);EventEmitter.on('click',this.a},
+    unsubscribe() {EventEmitter.off('click',this.a},
 };
 
 /*
@@ -19,7 +23,9 @@ obj1.first(1, 2, 3);
 // Внутренний вызов должен быть равносилен obj1.second(3, 2, 1)
  */
 export const obj1 = {
-    first(...args) {},
+    first(...args) {
+    	this.second(...args.reverse());
+    },
     second() {
         // здесь ничего писать не нужно
     },
