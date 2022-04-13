@@ -13,7 +13,7 @@ export const obj = {
     	this.count++;
     },
     subscribe() {this.a = this.a.bind(this);EventEmitter.on('click',this.a);},
-    unsubscribe() {EventEmitter.off('click',this.a},
+    unsubscribe() {EventEmitter.off('click',this.a);},
 };
 
 /*
